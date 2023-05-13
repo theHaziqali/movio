@@ -60,11 +60,13 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+    - assets/images/
+
   fonts:
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins-Black.ttf
-#        - asset: fonts/Poppins-BlackItalic.ttf
 #          style: italic
 
 

@@ -4,6 +4,7 @@ import 'package:movio/widgets/upcoming.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/services.dart';
+import 'package:movio/widgets/search.dart';
 
 
 void main() {
@@ -23,12 +24,16 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      home: const Home(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
       title: "Flutter app",
+      initialRoute: '/',
+      routes: {
+        '/':(context)=> const Home(),
+        '/search' : (context) =>const SearchList(),
+      },
     );
   }
 }
@@ -86,9 +91,9 @@ class _HomeState extends State<Home> {
         elevation: 0,
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.search),
+            icon:const Icon(Icons.search),
             onPressed: () {
-
+            Navigator.pushNamed(context,'/search');
             },
             color: AppTheme.colors.darkSlateBlue,
           ),

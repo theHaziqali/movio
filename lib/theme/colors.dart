@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 @immutable
 class AppColors{
-  final darkSlateBlue=const Color(0xFF2e2739);
+  final darkSlateBlue=const Color(0xff645482);
   final lavenderMist=const Color(0xFFf6f6fa);
   final gunmetal=const Color(0xFF827D88);
   final skyBlue=const Color(0xFF61C3F2);

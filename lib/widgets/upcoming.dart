@@ -4,7 +4,6 @@ class UpcomingMovies extends StatelessWidget {
   final List upcoming;
 
   const UpcomingMovies({super.key, required this.upcoming});
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -21,65 +20,62 @@ class UpcomingMovies extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {},
-                    child: SizedBox(
-                      height: 200,
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(8),
-                            height: 200,
-                            child: Stack(
-                              children: [
-                                Container(
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          height: 200,
+                          child: Stack(
+                            children: [
+                              Container(
 
-                                  decoration: BoxDecoration(
+                                decoration: BoxDecoration(
 
-                                    borderRadius: const BorderRadius.all(Radius.circular(12.0)),
+                                  borderRadius: const BorderRadius.all(Radius.circular(12.0)),
 
-                                      color:Colors.black,
-                                    image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                        image: NetworkImage(
-                                            'http://image.tmdb.org./t/p/w500' +
-                                                upcoming[index]
-                                                    ['backdrop_path'])),
-                                    boxShadow: null
-                                  ),
-                                  child: Align(
-                                      alignment:
-                                          AlignmentDirectional.bottomCenter,
-                                      child: Container(
-                                        width: 300,
-                                        child: Text(
-                                          upcoming[index]['title'] ??
-                                              'loading..',
-                                          style: TextStyle(
-                                            color: Colors.white,
+                                    color:Colors.black,
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                      image: NetworkImage(
+                                          'http://image.tmdb.org./t/p/w500' +
+                                              upcoming[index]
+                                                  ['backdrop_path'])),
+                                  boxShadow: null
+                                ),
+                                child: Align(
+                                    alignment:
+                                        AlignmentDirectional.bottomCenter,
+                                    child: Container(
+                                      width: 300,
+                                      child: Text(
+                                        upcoming[index]['title'] ??
+                                            'loading..',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      decoration: const BoxDecoration(
+                                          boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black,
+                                          blurRadius:
+                                              30.0, // soften the shadow
+                                          spreadRadius:
+                                              2.0, //extend the shadow
+                                          offset: Offset(
+                                            2.0, // Move to right 5  horizontally
+                                            0.0, // Move to bottom 5 Vertically
                                           ),
                                         ),
-                                        decoration: const BoxDecoration(
-                                            boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black,
-                                            blurRadius:
-                                                30.0, // soften the shadow
-                                            spreadRadius:
-                                                2.0, //extend the shadow
-                                            offset: Offset(
-                                              2.0, // Move to right 5  horizontally
-                                              0.0, // Move to bottom 5 Vertically
-                                            ),
-                                          ),
-                                            ]),
-                                        padding: const EdgeInsets.only(bottom: 8),
-                                      )
-                                  ),
+                                          ]),
+                                      padding: const EdgeInsets.only(bottom: 8),
+                                    )
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   );
                 },
