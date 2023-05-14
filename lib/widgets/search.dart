@@ -120,6 +120,7 @@ class _SearchListState extends State<SearchList> {
       ),
       body: ListView(
         children: [
+          const SizedBox(height: 10,),
           Categories(
             category:categories
           )

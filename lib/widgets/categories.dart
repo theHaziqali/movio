@@ -42,87 +42,93 @@ class Categories extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {},
-                    child: Center(
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          SizedBox(
-                            child: Column(
-                              children: [
-                                Container(
-                                  width: MediaQuery.of(context).size.width,
-                                  // color: Colors.blue,
-                                  padding: const EdgeInsets.only(
-                                      left: 22, right: 8, top: 8, bottom: 8),
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                          child: Container(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          child: Column(
+                            children: [
+                              Container(
+                                width: MediaQuery.of(context).size.width,
+                                // color: Colors.blue,
+                                padding: const EdgeInsets.only(
+                                    left: 22, right: 8, top: 8, bottom: 8),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                        child: Container(
+                                      padding: const EdgeInsets.all(52),
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  categoryImages[
+                                                      (2 * index)]),
+                                              fit: BoxFit.cover),
+                                          borderRadius:
+                                              const BorderRadius.all(
+                                                  Radius.circular(22)),
+                                          color: Colors.amber),
+                                      child: FittedBox(
+                                          alignment: Alignment.bottomLeft,
+
+                                          fit: BoxFit.scaleDown,
+
+                                          child: Text(
+                                        category[2 * index + 1]['name'],
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.center,
+                                        maxLines: 1,
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color:
+                                                AppTheme.colors.lavenderMist),
+                                      )),
+                                    )),
+                                    const SizedBox(
+                                      width: 10,
+                                      height: 10,
+                                    ),
+                                    Expanded(
+                                      child: Container(
                                         padding: const EdgeInsets.all(52),
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
                                                 image: AssetImage(
                                                     categoryImages[
-                                                        (2 * index)]),
+                                                        (2 * index) + 1]),
                                                 fit: BoxFit.cover),
                                             borderRadius:
                                                 const BorderRadius.all(
-                                                    Radius.circular(22)),
-                                            color: Colors.amber),
-                                        child: Text(
-                                          category[2 * index + 1]['name'],
-                                          style: TextStyle(
-                                              fontSize: 10,
-                                              color:
-                                                  AppTheme.colors.lavenderMist),
-                                        ),
-                                      )),
-                                      const SizedBox(
-                                        width: 10,
-                                        height: 10,
-                                      ),
-                                      Expanded(
-                                        child: Container(
-                                          padding: const EdgeInsets.all(52),
-                                          decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      categoryImages[
-                                                          (2 * index) + 1]),
-                                                  fit: BoxFit.cover),
-                                              borderRadius:
-                                                  const BorderRadius.all(
-                                                Radius.circular(22),
-                                              ),
-                                              color: Colors.greenAccent),
-                                          child: Align(
-                                            alignment: AlignmentDirectional
-                                                .bottomStart,
-                                            child: Text(
-                                              category[2 * index + 2]['name'],
-                                              style: TextStyle(
-                                                  fontSize: 10,
-                                                  color: AppTheme
-                                                      .colors.lavenderMist),
+                                              Radius.circular(22),
                                             ),
+                                            color: Colors.greenAccent),
+                                        child: FittedBox(
+                                          alignment: Alignment.bottomLeft,
+                                          fit: BoxFit.scaleDown,
+                                          child: Text(
+
+                                            category[2 * index + 2]['name'],
+                                            overflow: TextOverflow.ellipsis,
+
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                color: AppTheme
+                                                    .colors.lavenderMist),
                                           ),
                                         ),
                                       ),
-                                       SizedBox(
-                                        width: MediaQuery.of(context).size.width>=450 ? 60:10,
-                                        height: 10,
-                                      ),
+                                    ),
+                                     SizedBox(
+                                      width: MediaQuery.of(context).size.width>=450 ? 60:10,
+                                      height: 10,
+                                    ),
 
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   );
                 }),
